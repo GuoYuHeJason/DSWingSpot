@@ -65,6 +65,7 @@ This program estimates the area of the wing and wing spot of Drosophila suzukii.
 
 ### Installation
 
+Source Installation
 1. Clone the repository:
    ```sh
    git clone https://github.com/GuoYuHeJason/wing_spot_detection.git
@@ -73,12 +74,23 @@ This program estimates the area of the wing and wing spot of Drosophila suzukii.
    ```sh
    pip install -r requirements.txt
    ```
+Mac
+
+Windows
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- USAGE EXAMPLES -->
 ## Usage
-
+Download assets.zip
+input input, output paths,
+assets paths
+(if wing cut off is not well, need a new shape_predictor -> dlib)
+(if segmentation from the background is not well, need a new bg_remover model -> u2net)
+(if error: no scale bar detected -> need a new scale bar template image.)
+change parameters as needed:
+bar length, target ratio: ex. if the you want area to be measure in micrometers, set t.r. to 1
+bin_thresh: changes the size of the spot. best from 100 to 130, adjust emprically.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
