@@ -78,7 +78,7 @@ def predictions_to_xml(detector_name: str, predictor_name: str, dir='pred', upsa
         raise ValueError(f"No images found in directory: {dir}")
 
     # Process images in parallel
-    processed_images = Parallel(n_jobs=n_jobs)(delayed(process_image)(image_path[0]) for image_path in image_paths)
+    processed_images = Parallel(n_jobs=n_jobs, backend='threading')(delayed(process_image)(image_path[0]) for image_path in image_paths)
 
     # Append processed images to the XML structure
     for image_e in processed_images:
@@ -147,7 +147,7 @@ def predictions_to_xml_with_contour(predictor_name: str, images: str, out_file: 
     if image_paths is None:
         raise ValueError(f"No images found in directory: {images}")
     # Process images in parallel
-    processed_images = Parallel(n_jobs=n_jobs)(delayed(process_image)(image_path) for image_path, _ in image_paths)
+    processed_images = Parallel(n_jobs=n_jobs, backend='threading')(delayed(process_image)(image_path) for image_path, _ in image_paths)
 
     # Append processed images to the XML structure
     for image_e in processed_images:
