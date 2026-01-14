@@ -6,11 +6,14 @@ from use_case.detection.adapters.detection_controller import DetectionController
 from use_case.detection.detection_interactor import DetectionInteractor
 from use_case.detection.adapters.detection_presenter import DetectionPresenter
 
+import multiprocessing
+
 # have to convert and move the training data!!!!!!!!, make the resources folder in spotSize
 
 
 #  must protect the main entry point of your script using if __name__ == '__main__':
 if __name__ == '__main__':
+    multiprocessing.freeze_support() # for pyinstaller on Windows
     #make app
     app = QtWidgets.QApplication(sys.argv)
 
