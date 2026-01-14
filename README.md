@@ -16,7 +16,6 @@
     <a href="https://github.com/GuoYuHeJason/wing_spot_detection"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/GuoYuHeJason/wing_spot_detection">View Demo</a>
   </p>
 </div>
 
@@ -80,10 +79,6 @@ This program estimates the area of the wing and wing spot of Drosophila suzukii.
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-1. Place input images in the specified input folder.
-2. Configure parameters such as scale bar length and landmark indices in the UI.
-3. Run the detection process using the PyQt5-based GUI.
-4. View results in the output folder as JSON and CSV files.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -102,12 +97,6 @@ Don't forget to give the project a star! Thanks again!
 5. Open a Pull Request
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-### Top contributors:
-
-<a href="https://github.com/GuoYuHeJason/wing_spot_detection/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=GuoYuHeJason/wing_spot_detection" alt="contrib.rocks image" />
-</a>
 
 <!-- LICENSE -->
 ## License
@@ -129,6 +118,11 @@ Project Link: [https://github.com/GuoYuHeJason/wing_spot_detection](https://gith
 - [PyQt5](https://riverbankcomputing.com/software/pyqt/intro)
 - [OpenCV](https://opencv.org/)
 - [NumPy](https://numpy.org/)
+- [Pandas](https://pandas.pydata.org/)
+- [Dlib](http://dlib.net/)
+- [PyTorch](https://pytorch.org/)
+- [Pillow](https://python-pillow.org/)
 - [Joblib](https://joblib.readthedocs.io/)
+- [U-2-Net] (https://github.com/xuebinqin/U-2-Net)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

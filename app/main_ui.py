@@ -3,6 +3,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5 import uic
 import sys
 import os
+from os import path
 from use_case.detection.adapters.detection_controller import DetectionController
 
 "pyqt5-tools designer"
@@ -81,13 +82,38 @@ class MainManager(QtWidgets.QMainWindow, Ui_MainWindow):
         return self.get_dict_from_scroll_layout(self.verticalLayout) # type: ignore
     
     def get_file_paths_dict(self) -> dict[str, str]:
-        return self.get_dict_from_scroll_layout(self.verticalLayout_2) # type: ignore
+        file_path_dict = self.get_dict_from_scroll_layout(self.verticalLayout_2) # type: ignore
+        file_path_dict: dict[str, str]
+        for key, path in file_path_dict.items():
+            file_path_dict[key] = self.str_to_path(path)
+        return file_path_dict
+    
+    def str_to_path(self, text: str) -> str:
+        """
+        Convert a string to a valid path, handling various formatting issues such as:
+        - Removing leading/trailing spaces
+        - Removing starting/ending quotes
+        - Converting Windows-style paths to macOS-compatible paths
+        """
+        # Strip leading and trailing spaces
+        text = text.strip()
+
+        # Remove starting and ending quotes, if any
+        if text.startswith('"') and text.endswith('"'):
+            text = text[1:-1]
+        elif text.startswith("'") and text.endswith("'"):
+            text = text[1:-1]
+
+        # Normalize the path to handle different OS formats
+        normalized_path = os.path.normpath(text)
+
+        return normalized_path
     
     def get_detection_inputs(self) -> tuple[str, str, dict[str, str], dict[str, float]]:
         # assuming each file widget has a label and a text edit
         file_paths = self.get_file_paths_dict()
-        input_path = self.detectionInputlineEdit.text()
-        output_path = self.detectionOutputlineEdit.text()
+        input_path = self.str_to_path(self.detectionInputlineEdit.text())
+        output_path = self.str_to_path(self.detectionOutputlineEdit.text())
         parameters = self.get_parameters_dict()
 
         # check that all paths exist
