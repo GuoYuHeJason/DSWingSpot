@@ -23,5 +23,6 @@ class AlgSpotDetector(SpotDetector):
                                          close_kernel_hori=int(self.parameters['close_kernel_hori']), 
                                          close_kernel_vert=int(self.parameters['close_kernel_vert']), 
                                          open_kernel_hori=int(self.parameters['open_kernel_hori']), 
-                                         open_kernel_vert=int(self.parameters['open_kernel_vert']))
+                                         open_kernel_vert=int(self.parameters['open_kernel_vert']),
+                                         cut_right_half=False)
         return spot_contour
