@@ -33,6 +33,7 @@
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
+    <li><a href="#usage">Usage</a></li>
     <li>
       <a href="#inputs">Inputs</a>
       <ul>
@@ -41,7 +42,6 @@
       </ul>
     </li>
     <li><a href="#processing-pipeline">Processing Pipeline</a></li>
-    <li><a href="#usage">Usage</a></li>
     <li><a href="#output">Output</a></li>
     <li><a href="#troubleshooting">Troubleshooting</a></li>
     <li><a href="#contributing">Contributing</a></li>
@@ -75,7 +75,7 @@ DSwingSpot is a desktop application that estimates the area of wings and wing sp
 
 #### From Source
 
-### Prerequisites
+##### Prerequisites
 
 - Python 3.10 or higher
 - pip (Python package manager)
@@ -121,6 +121,37 @@ DSwingSpot is a desktop application that estimates the area of wings and wing sp
 4. Download the required assets (model files):
    - Download `assets.zip` from the [Releases](https://github.com/GuoYuHeJason/DSwingSpot/releases/tag/v1.0.0_win) page
    - Extract the contents to a known location on your system
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- USAGE EXAMPLES -->
+## Usage
+
+### Running the Application
+
+1. Start the application:
+   ```sh
+   python main.py
+   ```
+   or run the executable DSwingSpot.exe if you downloaded a binary release.
+
+2. In the GUI, configure the following:
+
+   **Paths:**
+   - **Input Path**: Directory containing your wing images (supports common formats: PNG, JPG, TIFF)
+   - **Output Path**: Directory where results will be saved
+
+   **Asset Files:**
+   - **Shape Predictor**: Path to the `.dat` model file
+   - **Background Removal Model**: Path to the `.pth` model file
+   - **Scale Bar Template**: Path to your scale bar template image
+
+   **Parameters:**
+   - Adjust parameters as needed for your specific images (see [Parameters](#parameters) section)
+
+3. Click the **Detect** button to start processing.
+
+4. Monitor progress in the application. Upon completion, results will be saved to the output directory.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -212,37 +243,6 @@ DSwingSpot processes images through the following stages:
    └── Save results to CSV and JSON files
    └── Save debug images (landmarks, contours) to output directory
 ```
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- USAGE EXAMPLES -->
-## Usage
-
-### Running the Application
-
-1. Start the application:
-   ```sh
-   python main.py
-   ```
-   or run the executable DSwingSpot.exe if you downloaded a binary release.
-
-2. In the GUI, configure the following:
-
-   **Paths:**
-   - **Input Path**: Directory containing your wing images (supports common formats: PNG, JPG, TIFF)
-   - **Output Path**: Directory where results will be saved
-
-   **Asset Files:**
-   - **Shape Predictor**: Path to the `.dat` model file
-   - **Background Removal Model**: Path to the `.pth` model file
-   - **Scale Bar Template**: Path to your scale bar template image
-
-   **Parameters:**
-   - Adjust parameters as needed for your specific images (see [Parameters](#parameters) section)
-
-3. Click the **Detect** button to start processing.
-
-4. Monitor progress in the application. Upon completion, results will be saved to the output directory.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

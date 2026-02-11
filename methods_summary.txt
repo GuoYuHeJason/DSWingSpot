@@ -1,0 +1,18 @@
+Wing and Wing Spot Area Measurement Methods
+
+INPUTS
+
+Wing images were processed using DSwingSpot, a custom image analysis application. 
+The analysis pipeline required three pre-trained model files: 
+(1) a dlib shape predictor model (.dat) trained to identify anatomical landmarks on wing structures,
+(2) a U²-Net deep learning model (.pth) for background segmentation, and 
+(3) a scale bar template image for calibration purposes. 
+Scale calibration parameters included the known length of the scale bar in micrometers and a target scale ratio for converting pixel measurements to real-world units (μm²). Landmark indices were specified to define the anatomical points used for wing contour segmentation. Spot detection was controlled by several morphological parameters, including binary threshold values (typically 100–130), minimum pixel counts and widths for spot qualification, median blur kernel size for noise reduction, and kernel dimensions for morphological closing and opening operations.
+
+IMAGE PROCESSING PIPELINE
+
+Image processing was performed through an eight-stage automated pipeline. First, wing images were loaded from the designated input directory. Second, scale calibration was performed by detecting the scale bar in each image using template matching algorithms, followed by image resizing to normalize the pixel-to-micrometer ratio across all specimens. Third, background removal was accomplished using a U²-Net convolutional neural network, which segmented the wing from the image background and produced transparent PNG images containing only the isolated wing structure. Fourth, anatomical landmarks were predicted on the background-removed images using the dlib shape predictor model. Fifth, the wing contour was extracted from the segmented image and split at the predicted landmark points to isolate the region of interest. Sixth, wing spots were detected within the isolated wing region through binary thresholding and morphological operations including median blurring, closing, and opening transformations. Seventh, wing area was calculated from the extracted contour, spot area was calculated from the detected spot regions, and the spot-to-wing area ratio was computed. Eighth, all results were exported to the designated output directory. Processing was parallelized using multi-threading to improve computational efficiency when analyzing large image datasets.
+
+OUTPUT
+
+Quantitative results were exported in both CSV and JSON formats, containing image identifiers, wing area measurements, spot area measurements, and spot-to-wing area ratios for each processed specimen. Additionally, landmark coordinate data were saved to a separate CSV file for quality control and debugging purposes. Annotated debug images showing detected contours and predicted landmarks were generated to facilitate visual verification of the automated measurements.
