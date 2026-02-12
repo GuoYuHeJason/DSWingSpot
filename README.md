@@ -268,10 +268,10 @@ The application generates the following output files:
 | Issue | Possible Cause | Solution |
 |-------|---------------|----------|
 | **"No scale bar detected"** | Scale bar template doesn't match | Create a new scale bar template image cropped from one of your input images |
-| **Poor background segmentation** | U²-Net model not suited for your images | Train a custom U²-Net model on your image type, or manually edit images |
-| **Incorrect wing cropping** | Landmark prediction is inaccurate | Train a new dlib shape predictor model with manually labeled landmarks from your images |
-| **Spots not detected / over-detected** | `bin_thresh` parameter needs adjustment | Increase `bin_thresh` (100-130) to detect fewer/smaller spots; decrease for more/larger spots |
-| **Spots not detected / spot cropped in half** | Wing position/orientation issue | Tip of the wing needs to be on left side, remove excessive white space so that the wing is approximately centered|
+| **Poor background segmentation** | U²-Net model not suited for your images | Train a custom U²-Net model on your image type, or manually edit images [U²-Net](https://github.com/xuebinqin/U-2-Net)|
+| **Incorrect wing cropping** | Landmark prediction is inaccurate | Train a new dlib shape predictor model with manually labeled landmarks from your images [Dlib](http://dlib.net/)|
+| **Spots not detected / over-detected** | `bin_thresh` parameter needs adjustment | Increase `bin_thresh` to detect lighter spots; decrease for darker spots |
+| **Spots not detected / spot cropped in half** | Wing position/orientation issue | Tip of the wing needs to be on left side, remove excessive white space so that the wing is approximately centered horizontally|
 | **Application crashes on start** | Missing dependencies | Ensure all packages in `requirements.txt` are installed correctly |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
