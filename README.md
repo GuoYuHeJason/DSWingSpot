@@ -13,7 +13,7 @@
   <p align="center">
     A tool for detecting and analyzing wings and wing spots of Drosophila suzukii and other winged insects.
     <br />
-    <a href="https://github.com/GuoYuHeJason/wing_spot_detection"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/GuoYuHeJason/wing_spot_detection"><strong>Explore the codebase »</strong></a>
     <br />
     <br />
   </p>
