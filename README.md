@@ -271,7 +271,7 @@ The application generates the following output files:
 | **Poor background segmentation** | U²-Net model not suited for your images | Train a custom U²-Net model on your image type, or manually edit images |
 | **Incorrect wing cropping** | Landmark prediction is inaccurate | Train a new dlib shape predictor model with manually labeled landmarks from your images |
 | **Spots not detected / over-detected** | `bin_thresh` parameter needs adjustment | Increase `bin_thresh` (100-130) to detect fewer/smaller spots; decrease for more/larger spots |
-| **Spots not detected / spot cropped in half** | Wing position/orientation issue | Tip of the wing needs to be on left side, remove excessive white space so that wing approx. center|
+| **Spots not detected / spot cropped in half** | Wing position/orientation issue | Tip of the wing needs to be on left side, remove excessive white space so that the wing is approximately centered|
 | **Application crashes on start** | Missing dependencies | Ensure all packages in `requirements.txt` are installed correctly |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
