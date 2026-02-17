@@ -1,6 +1,6 @@
-numpy==1.26.4
+numpy>=1.26.4
 dlib>=19.7.0
-opencv-python==4.6.0.66
+opencv-python>=4.6.0.66
 Pillow>=10.0.0
 torch
 torchvision
