@@ -102,16 +102,6 @@ DSwingSpot is a desktop application that estimates the area of wings and wing sp
    - Download `assets.zip` from the [Releases](https://github.com/GuoYuHeJason/DSwingSpot/releases/tag/v1.0.0_wins) page
    - Extract the contents to a known location on your system
 
-#### macOS
-
-1. Download the binary release for macOS 
-   - Download `DSwingSpot.zip` from the [Releases](https://github.com/GuoYuHeJason/DSwingSpot/releases/tag/v1.0.0_mac) page
-   - Extract the contents to a known location on your system
-
-4. Download the required assets (model files):
-   - Download `assets.zip` from the [Releases](https://github.com/GuoYuHeJason/DSwingSpot/releases/tag/v1.0.0_mac) page
-   - Extract the contents to a known location on your system
-
 #### Windows
 
 1. Download the binary release for Windows 
