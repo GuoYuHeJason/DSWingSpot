@@ -5,7 +5,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/GuoYuHeJason/wing_spot_detection">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="logo.png" alt="Logo" height="160">
   </a>
 
 <h3 align="center">DSwingSpot</h3>
@@ -100,16 +100,6 @@ DSwingSpot is a desktop application that estimates the area of wings and wing sp
 
 4. Download the required assets (model files):
    - Download `assets.zip` from the [Releases](https://github.com/GuoYuHeJason/DSwingSpot/releases/tag/v1.0.0_wins) page
-   - Extract the contents to a known location on your system
-
-#### macOS
-
-1. Download the binary release for macOS 
-   - Download `DSwingSpot.zip` from the [Releases](https://github.com/GuoYuHeJason/DSwingSpot/releases/tag/v1.0.0_mac) page
-   - Extract the contents to a known location on your system
-
-4. Download the required assets (model files):
-   - Download `assets.zip` from the [Releases](https://github.com/GuoYuHeJason/DSwingSpot/releases/tag/v1.0.0_mac) page
    - Extract the contents to a known location on your system
 
 #### Windows
@@ -273,6 +263,8 @@ The application generates the following output files:
 | **Spots not detected / over-detected** | `bin_thresh` parameter needs adjustment | Increase `bin_thresh` to detect lighter spots; decrease for darker spots |
 | **Spots not detected / spot cropped in half** | Wing position/orientation issue | Tip of the wing needs to be on left side, remove excessive white space so that the wing is approximately centered horizontally|
 | **Application crashes on start** | Missing dependencies | Ensure all packages in `requirements.txt` are installed correctly |
+| **PIL exceeds pixel size limit** | Image too large | change target scale from 1 to 10 |
+| **KeyError: 'image_id'** | Images already measured before | delete files in the output dir, and restart app |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
