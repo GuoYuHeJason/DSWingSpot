@@ -87,10 +87,178 @@ class Ui_MainWindow(object):
         self.ParametersScrollArea.setWidgetResizable(True)
         self.ParametersScrollArea.setObjectName("ParametersScrollArea")
         self.parametersScrollAreaWidgetContents = QtWidgets.QWidget()
-        self.parametersScrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 386, 1284))
+        self.parametersScrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 382, 1920))
         self.parametersScrollAreaWidgetContents.setObjectName("parametersScrollAreaWidgetContents")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.parametersScrollAreaWidgetContents)
         self.verticalLayout.setObjectName("verticalLayout")
+        self.parametersWidget_19 = QtWidgets.QWidget(self.parametersScrollAreaWidgetContents)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.parametersWidget_19.sizePolicy().hasHeightForWidth())
+        self.parametersWidget_19.setSizePolicy(sizePolicy)
+        self.parametersWidget_19.setMinimumSize(QtCore.QSize(350, 100))
+        self.parametersWidget_19.setObjectName("parametersWidget_19")
+        self.parametersLabel_7 = QtWidgets.QLabel(self.parametersWidget_19)
+        self.parametersLabel_7.setGeometry(QtCore.QRect(0, 0, 150, 50))
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.parametersLabel_7.sizePolicy().hasHeightForWidth())
+        self.parametersLabel_7.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setPointSize(18)
+        self.parametersLabel_7.setFont(font)
+        self.parametersLabel_7.setObjectName("parametersLabel_7")
+        self.parametersTextEdit_7 = QtWidgets.QTextEdit(self.parametersWidget_19)
+        self.parametersTextEdit_7.setGeometry(QtCore.QRect(150, 0, 200, 50))
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.parametersTextEdit_7.sizePolicy().hasHeightForWidth())
+        self.parametersTextEdit_7.setSizePolicy(sizePolicy)
+        self.parametersTextEdit_7.setObjectName("parametersTextEdit_7")
+        self.verticalLayout.addWidget(self.parametersWidget_19)
+        self.parametersWidget_18 = QtWidgets.QWidget(self.parametersScrollAreaWidgetContents)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.parametersWidget_18.sizePolicy().hasHeightForWidth())
+        self.parametersWidget_18.setSizePolicy(sizePolicy)
+        self.parametersWidget_18.setMinimumSize(QtCore.QSize(350, 100))
+        self.parametersWidget_18.setObjectName("parametersWidget_18")
+        self.parametersLabel_6 = QtWidgets.QLabel(self.parametersWidget_18)
+        self.parametersLabel_6.setGeometry(QtCore.QRect(0, 0, 150, 50))
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.parametersLabel_6.sizePolicy().hasHeightForWidth())
+        self.parametersLabel_6.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setPointSize(18)
+        self.parametersLabel_6.setFont(font)
+        self.parametersLabel_6.setObjectName("parametersLabel_6")
+        self.parametersTextEdit_6 = QtWidgets.QTextEdit(self.parametersWidget_18)
+        self.parametersTextEdit_6.setGeometry(QtCore.QRect(150, 0, 200, 50))
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.parametersTextEdit_6.sizePolicy().hasHeightForWidth())
+        self.parametersTextEdit_6.setSizePolicy(sizePolicy)
+        self.parametersTextEdit_6.setObjectName("parametersTextEdit_6")
+        self.verticalLayout.addWidget(self.parametersWidget_18)
+        self.parametersWidget_17 = QtWidgets.QWidget(self.parametersScrollAreaWidgetContents)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.parametersWidget_17.sizePolicy().hasHeightForWidth())
+        self.parametersWidget_17.setSizePolicy(sizePolicy)
+        self.parametersWidget_17.setMinimumSize(QtCore.QSize(350, 100))
+        self.parametersWidget_17.setObjectName("parametersWidget_17")
+        self.parametersLabel_5 = QtWidgets.QLabel(self.parametersWidget_17)
+        self.parametersLabel_5.setGeometry(QtCore.QRect(0, 0, 150, 50))
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.parametersLabel_5.sizePolicy().hasHeightForWidth())
+        self.parametersLabel_5.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setPointSize(18)
+        self.parametersLabel_5.setFont(font)
+        self.parametersLabel_5.setObjectName("parametersLabel_5")
+        self.parametersTextEdit_5 = QtWidgets.QTextEdit(self.parametersWidget_17)
+        self.parametersTextEdit_5.setGeometry(QtCore.QRect(150, 0, 200, 50))
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.parametersTextEdit_5.sizePolicy().hasHeightForWidth())
+        self.parametersTextEdit_5.setSizePolicy(sizePolicy)
+        self.parametersTextEdit_5.setObjectName("parametersTextEdit_5")
+        self.verticalLayout.addWidget(self.parametersWidget_17)
+        self.parametersWidget_16 = QtWidgets.QWidget(self.parametersScrollAreaWidgetContents)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.parametersWidget_16.sizePolicy().hasHeightForWidth())
+        self.parametersWidget_16.setSizePolicy(sizePolicy)
+        self.parametersWidget_16.setMinimumSize(QtCore.QSize(350, 100))
+        self.parametersWidget_16.setObjectName("parametersWidget_16")
+        self.parametersLabel_4 = QtWidgets.QLabel(self.parametersWidget_16)
+        self.parametersLabel_4.setGeometry(QtCore.QRect(0, 0, 150, 50))
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.parametersLabel_4.sizePolicy().hasHeightForWidth())
+        self.parametersLabel_4.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setPointSize(14)
+        self.parametersLabel_4.setFont(font)
+        self.parametersLabel_4.setObjectName("parametersLabel_4")
+        self.parametersTextEdit_4 = QtWidgets.QTextEdit(self.parametersWidget_16)
+        self.parametersTextEdit_4.setGeometry(QtCore.QRect(150, 0, 200, 50))
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.parametersTextEdit_4.sizePolicy().hasHeightForWidth())
+        self.parametersTextEdit_4.setSizePolicy(sizePolicy)
+        self.parametersTextEdit_4.setObjectName("parametersTextEdit_4")
+        self.verticalLayout.addWidget(self.parametersWidget_16)
+        self.parametersWidget_14 = QtWidgets.QWidget(self.parametersScrollAreaWidgetContents)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.parametersWidget_14.sizePolicy().hasHeightForWidth())
+        self.parametersWidget_14.setSizePolicy(sizePolicy)
+        self.parametersWidget_14.setMinimumSize(QtCore.QSize(350, 100))
+        self.parametersWidget_14.setObjectName("parametersWidget_14")
+        self.parametersLabel_2 = QtWidgets.QLabel(self.parametersWidget_14)
+        self.parametersLabel_2.setGeometry(QtCore.QRect(0, 0, 150, 50))
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.parametersLabel_2.sizePolicy().hasHeightForWidth())
+        self.parametersLabel_2.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setPointSize(18)
+        self.parametersLabel_2.setFont(font)
+        self.parametersLabel_2.setObjectName("parametersLabel_2")
+        self.parametersTextEdit_2 = QtWidgets.QTextEdit(self.parametersWidget_14)
+        self.parametersTextEdit_2.setGeometry(QtCore.QRect(150, 0, 200, 50))
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.parametersTextEdit_2.sizePolicy().hasHeightForWidth())
+        self.parametersTextEdit_2.setSizePolicy(sizePolicy)
+        self.parametersTextEdit_2.setObjectName("parametersTextEdit_2")
+        self.verticalLayout.addWidget(self.parametersWidget_14)
+        self.parametersWidget_15 = QtWidgets.QWidget(self.parametersScrollAreaWidgetContents)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.parametersWidget_15.sizePolicy().hasHeightForWidth())
+        self.parametersWidget_15.setSizePolicy(sizePolicy)
+        self.parametersWidget_15.setMinimumSize(QtCore.QSize(350, 100))
+        self.parametersWidget_15.setObjectName("parametersWidget_15")
+        self.parametersLabel_3 = QtWidgets.QLabel(self.parametersWidget_15)
+        self.parametersLabel_3.setGeometry(QtCore.QRect(0, 0, 150, 50))
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.parametersLabel_3.sizePolicy().hasHeightForWidth())
+        self.parametersLabel_3.setSizePolicy(sizePolicy)
+        font = QtGui.QFont()
+        font.setPointSize(18)
+        self.parametersLabel_3.setFont(font)
+        self.parametersLabel_3.setObjectName("parametersLabel_3")
+        self.parametersTextEdit_3 = QtWidgets.QTextEdit(self.parametersWidget_15)
+        self.parametersTextEdit_3.setGeometry(QtCore.QRect(150, 0, 200, 50))
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.parametersTextEdit_3.sizePolicy().hasHeightForWidth())
+        self.parametersTextEdit_3.setSizePolicy(sizePolicy)
+        self.parametersTextEdit_3.setObjectName("parametersTextEdit_3")
+        self.verticalLayout.addWidget(self.parametersWidget_15)
         self.parametersWidget_1 = QtWidgets.QWidget(self.parametersScrollAreaWidgetContents)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
@@ -457,7 +625,7 @@ class Ui_MainWindow(object):
         self.filesScrollArea.setWidgetResizable(True)
         self.filesScrollArea.setObjectName("filesScrollArea")
         self.fileScrollAreaWidgetContents = QtWidgets.QWidget()
-        self.fileScrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 476, 489))
+        self.fileScrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 472, 489))
         self.fileScrollAreaWidgetContents.setObjectName("fileScrollAreaWidgetContents")
         self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.fileScrollAreaWidgetContents)
         self.verticalLayout_2.setObjectName("verticalLayout_2")
@@ -546,15 +714,15 @@ class Ui_MainWindow(object):
         self.filesTextEdit_3.setObjectName("filesTextEdit_3")
         self.verticalLayout_2.addWidget(self.filesWidget_3)
         self.filesScrollArea.setWidget(self.fileScrollAreaWidgetContents)
-        self.parametersFrame.raise_()
         self.filesFrame.raise_()
         self.detectionFrame.raise_()
+        self.parametersFrame.raise_()
         self.detectionFrameButton.raise_()
         self.parametersFrameButtuon.raise_()
         self.filesFrameButtuon.raise_()
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 930, 22))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 930, 21))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
@@ -562,9 +730,9 @@ class Ui_MainWindow(object):
         MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindow)
-        self.detectionFrameButton.clicked.connect(self.detectionFrame.raise_)
-        self.parametersFrameButtuon.clicked.connect(self.parametersFrame.raise_)
-        self.filesFrameButtuon.clicked.connect(self.filesFrame.raise_)
+        self.detectionFrameButton.clicked.connect(self.detectionFrame.raise) # type: ignore
+        self.parametersFrameButtuon.clicked.connect(self.parametersFrame.raise) # type: ignore
+        self.filesFrameButtuon.clicked.connect(self.filesFrame.raise) # type: ignore
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
@@ -575,89 +743,125 @@ class Ui_MainWindow(object):
         self.detectionOutputlabel.setText(_translate("MainWindow", "Output"))
         self.detectionControllerButton.setText(_translate("MainWindow", "Detect"))
         self.parametersFrameButtuon.setText(_translate("MainWindow", "Parameters"))
-        self.parametersLabel_1.setText(_translate("MainWindow", "target_scale"))
+        self.parametersLabel_7.setText(_translate("MainWindow", "target_scale"))
+        self.parametersTextEdit_7.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'.AppleSystemUIFont\'; font-size:13pt;\">1</span></p></body></html>"))
+        self.parametersLabel_6.setText(_translate("MainWindow", "bar_length"))
+        self.parametersTextEdit_6.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'.AppleSystemUIFont\'; font-size:13pt;\">500</span></p></body></html>"))
+        self.parametersLabel_5.setText(_translate("MainWindow", "bin_thresh"))
+        self.parametersTextEdit_5.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'.AppleSystemUIFont\'; font-size:13pt;\">116</span></p></body></html>"))
+        self.parametersLabel_4.setText(_translate("MainWindow", "adjust_bin_thresh"))
+        self.parametersTextEdit_4.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">false</p></body></html>"))
+        self.parametersLabel_2.setText(_translate("MainWindow", "min_bound"))
+        self.parametersTextEdit_2.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'.AppleSystemUIFont\'; font-size:13pt;\">10000</span></p></body></html>"))
+        self.parametersLabel_3.setText(_translate("MainWindow", "mid_bound"))
+        self.parametersTextEdit_3.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">90000</p></body></html>"))
+        self.parametersLabel_1.setText(_translate("MainWindow", "upper_bound"))
         self.parametersTextEdit_1.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'.AppleSystemUIFont\'; font-size:13pt;\">1</span></p></body></html>"))
-        self.parametersLabel_31.setText(_translate("MainWindow", "bar_length"))
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">120000</p></body></html>"))
+        self.parametersLabel_31.setText(_translate("MainWindow", "max_bound"))
         self.parametersTextEdit_31.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'.AppleSystemUIFont\'; font-size:13pt;\">500</span></p></body></html>"))
-        self.parametersLabel_35.setText(_translate("MainWindow", "bin_thresh"))
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">200000</p></body></html>"))
+        self.parametersLabel_35.setText(_translate("MainWindow", "adjust_rate"))
         self.parametersTextEdit_35.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'.AppleSystemUIFont\'; font-size:13pt;\">116</span></p></body></html>"))
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'.AppleSystemUIFont\'; font-size:13pt;\">0.9</span></p></body></html>"))
         self.parametersLabel_34.setText(_translate("MainWindow", "min_black_pixels"))
         self.parametersTextEdit_34.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'.AppleSystemUIFont\'; font-size:13pt;\">94</span></p></body></html>"))
         self.parametersLabel_33.setText(_translate("MainWindow", "min_black_width"))
         self.parametersTextEdit_33.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'.AppleSystemUIFont\'; font-size:13pt;\">32</span></p></body></html>"))
         self.parametersLabel_32.setText(_translate("MainWindow", "median_blur_ksize"))
         self.parametersTextEdit_32.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'.AppleSystemUIFont\'; font-size:13pt;\">5</span></p></body></html>"))
         self.parametersLabel_30.setText(_translate("MainWindow", "close_kernel_hori"))
         self.parametersTextEdit_30.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'.AppleSystemUIFont\'; font-size:13pt;\">7</span></p></body></html>"))
         self.parametersLabel_29.setText(_translate("MainWindow", "close_kernel_vert"))
         self.parametersWidget_12.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'.AppleSystemUIFont\'; font-size:13pt;\">11</span></p></body></html>"))
         self.parametersLabel_39.setText(_translate("MainWindow", "open_kernel_hori"))
         self.parametersTextEdit_39.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'.AppleSystemUIFont\'; font-size:13pt;\">7</span></p></body></html>"))
         self.parametersLabel_38.setText(_translate("MainWindow", "open_kernel_vert"))
         self.parametersTextEdit_38.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'.AppleSystemUIFont\'; font-size:13pt;\">7</span></p></body></html>"))
         self.parametersLabel_37.setText(_translate("MainWindow", "landmark1"))
         self.parametersTextEdit_37.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'.AppleSystemUIFont\'; font-size:13pt;\">1</span></p></body></html>"))
         self.parametersLabel_40.setText(_translate("MainWindow", "landmark2"))
         self.parametersTextEdit_40.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'.AppleSystemUIFont\'; font-size:13pt;\">7</span></p></body></html>"))
         self.filesFrameButtuon.setText(_translate("MainWindow", "Assets"))
         self.filesLabel_1.setText(_translate("MainWindow", "scale_bar_template"))
         self.filesTextEdit_1.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:\'.AppleSystemUIFont\'; font-size:13pt;\"><br /></p></body></html>"))
         self.filesLabel_2.setText(_translate("MainWindow", "bg_removal_model"))
         self.filesTextEdit_2.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8pt; font-weight:400; font-style:normal;\">\n"
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:\'.AppleSystemUIFont\'; font-size:13pt;\"><br /></p></body></html>"))
         self.filesLabel_3.setText(_translate("MainWindow", "shape_predictor"))
