@@ -42,10 +42,10 @@ class AlgSpotDetector(SpotDetector):
                                          open_kernel_hori=int(self.parameters['open_kernel_hori']), 
                                          open_kernel_vert=int(self.parameters['open_kernel_vert']),
                                          adjust_bin_thresh=SpotDetector._to_bool(self.parameters['adjust_bin_thresh']),
-                                         contour_area_threshold=int(self.parameters['contour_area_threshold']),
+                                         contour_area_threshold=int(self.parameters['min_bound']),
                                          upper_bound=int(self.parameters['upper_bound']),
-                                         softer_upper_bound=int(self.parameters['softer_upper_bound']),
-                                         hard_upper_bound=int(self.parameters['hard_upper_bound']),
-                                         scale_by=float(self.parameters['scale_by']),
+                                         softer_upper_bound=int(self.parameters['mid_bound']),
+                                         hard_upper_bound=int(self.parameters['max_bound']),
+                                         scale_by=float(self.parameters['adjust_rate']),
                                          cut_right_half=True)
         return spot_contour

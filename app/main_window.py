@@ -714,9 +714,9 @@ class Ui_MainWindow(object):
         self.filesTextEdit_3.setObjectName("filesTextEdit_3")
         self.verticalLayout_2.addWidget(self.filesWidget_3)
         self.filesScrollArea.setWidget(self.fileScrollAreaWidgetContents)
+        self.parametersFrame.raise_()
         self.filesFrame.raise_()
         self.detectionFrame.raise_()
-        self.parametersFrame.raise_()
         self.detectionFrameButton.raise_()
         self.parametersFrameButtuon.raise_()
         self.filesFrameButtuon.raise_()
@@ -730,9 +730,9 @@ class Ui_MainWindow(object):
         MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindow)
-        self.detectionFrameButton.clicked.connect(self.detectionFrame.raise) # type: ignore
-        self.parametersFrameButtuon.clicked.connect(self.parametersFrame.raise) # type: ignore
-        self.filesFrameButtuon.clicked.connect(self.filesFrame.raise) # type: ignore
+        self.detectionFrameButton.clicked.connect(self.detectionFrame.raise_) # type: ignore
+        self.parametersFrameButtuon.clicked.connect(self.parametersFrame.raise_) # type: ignore
+        self.filesFrameButtuon.clicked.connect(self.filesFrame.raise_) # type: ignore
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
