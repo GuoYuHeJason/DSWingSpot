@@ -188,7 +188,13 @@ def find_spot_contour(
     open_kernel_vert: int,
     median_blur_iterations: int = 5,
     contour_area_threshold: float = 10000,
-    cut_right_half: bool = True
+    cut_right_half: bool = True,
+    adjust_bin_thresh: bool = False,
+    upper_bound: int = 120000,
+    softer_upper_bound: int = 90000,
+    hard_upper_bound: int = 200000,
+    scale_by: float = 0.9,
+    iterations: int = 0,
 ) -> np.ndarray | None:
     """
     Finds the largest contour in a thresholded grayscale image, 
@@ -206,6 +212,9 @@ def find_spot_contour(
         cut_right_half (bool): Whether to cut the right half of the image.
         contour_draw_color (tuple): Color to draw the contour.
         contour_draw_thickness (int): Thickness to draw the contour.
+        harder_upper_bound (int): Area threshold above which the contour is considered too large to be valid, considered no spot or software error.
+        upper_bound (int): Area threshold above which the contour is considered to be larger than expected, but may still be valid, return the contour if already tired long enough
+        softer_upper_bound (int): Area threshold below which the contour is considered to be expected and acceptable, return the contour immediately.
 
     Returns:
         tuple: (contour, image)
@@ -213,6 +222,10 @@ def find_spot_contour(
             image: The original image with the contour drawn on it.
     """
 
+    # if ostu_threshold:
+    #     # Apply Otsu's thresholding
+    #     gray = image_preprocessing(image)
+    #     _, bin_thresh = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
 
     thresh = binary_spot(image, bin_thresh)
 
@@ -297,18 +310,51 @@ def find_spot_contour(
     # assess the contour area
     if contour is None or cv2.contourArea(contour) < contour_area_threshold:
         return None # original image with no contour found
-    else:
+    # if the contour is good, return it
+    if not adjust_bin_thresh:
+        return contour
+    
+    area = cv2.contourArea(contour)
+    if area < softer_upper_bound or softer_upper_bound <= 0:
+        return contour
+    # if too long, return
+    if iterations >= 10:
+        if area < hard_upper_bound or hard_upper_bound <= 0:
+            return contour
+        else:
+            return None
+    if iterations >= 3:
+        if area < upper_bound or upper_bound <= 0:
+            return contour
+        
+    return find_spot_contour(image = image,
+                    wing_contour = wing_contour,
+                    bin_thresh = int(bin_thresh * scale_by),
+                    min_black_pixels = min_black_pixels,
+                    min_black_width = min_black_width,
+                    median_blur_ksize = median_blur_ksize,
+                    close_kernel_hori = close_kernel_hori,
+                    close_kernel_vert = close_kernel_vert,
+                    open_kernel_hori = open_kernel_hori,
+                    open_kernel_vert = open_kernel_vert,
+                    median_blur_iterations = median_blur_iterations,
+                    contour_area_threshold = contour_area_threshold,
+                    cut_right_half = cut_right_half,
+                    upper_bound = upper_bound,
+                    softer_upper_bound = softer_upper_bound,
+                    hard_upper_bound = hard_upper_bound,
+                    scale_by = scale_by,
+                    iterations = iterations + 1)
+        # iterate
         # find the spot on cut thresholded image, but draw the contour on the original image
 
-        """uncomment the following lines to visualize the intermediate steps"""
-        # cv2.drawContours(image, [contour], -1, contour_draw_color, contour_draw_thickness)
-        # cv2.imshow('t',thresh)
-        # cv2.waitKey(0)
-        # cv2.imshow('final',image)
-        # cv2.waitKey(0)
-        # cv2.destroyAllWindows()
-
-        return contour
+    """uncomment the following lines to visualize the intermediate steps"""
+    # cv2.drawContours(image, [contour], -1, contour_draw_color, contour_draw_thickness)
+    # cv2.imshow('t',thresh)
+    # cv2.waitKey(0)
+    # cv2.imshow('final',image)
+    # cv2.waitKey(0)
+    # cv2.destroyAllWindows()
 
 # if __name__ == "__main__":
     # # Test the functions here
