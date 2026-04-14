@@ -188,7 +188,7 @@ def find_spot_contour(
     open_kernel_vert: int,
     median_blur_iterations: int = 5,
     contour_area_threshold: float = 10000,
-    cut_right_half: bool = True,
+    cut_right_half: bool = False,
     adjust_bin_thresh: bool = False,
     upper_bound: int = 120000,
     softer_upper_bound: int = 90000,

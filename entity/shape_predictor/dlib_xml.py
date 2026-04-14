@@ -170,7 +170,10 @@ def dlib_xml_to_pandas(xml_file: str, parse=False):
     # Flatten the XML structure using list comprehensions
     for image in root.findall("images/image"):
         image_file = image.attrib['file']
-        box = image.findall("box")[0]
+        boxes = image.findall("box")
+        if not boxes:
+            continue  # Skip images with no box
+        box = boxes[0]
         box_top = float(box.attrib['top'])
         box_left = float(box.attrib['left'])
         box_width = float(box.attrib['width'])
