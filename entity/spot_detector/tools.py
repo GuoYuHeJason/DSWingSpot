@@ -189,6 +189,7 @@ def find_spot_contour(
     median_blur_iterations: int = 5,
     contour_area_threshold: float = 10000,
     cut_right_half: bool = False,
+    ostu_threshold: bool = True,
     adjust_bin_thresh: bool = False,
     upper_bound: int = 120000,
     softer_upper_bound: int = 90000,
@@ -222,10 +223,10 @@ def find_spot_contour(
             image: The original image with the contour drawn on it.
     """
 
-    # if ostu_threshold:
-    #     # Apply Otsu's thresholding
-    #     gray = image_preprocessing(image)
-    #     _, bin_thresh = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
+    if ostu_threshold:
+        # Apply Otsu's thresholding
+        gray = image_preprocessing(image)
+        _, bin_thresh = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
 
     thresh = binary_spot(image, bin_thresh)
 
