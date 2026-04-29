@@ -219,7 +219,7 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(self.parametersLabel_2.sizePolicy().hasHeightForWidth())
         self.parametersLabel_2.setSizePolicy(sizePolicy)
         font = QtGui.QFont()
-        font.setPointSize(18)
+        font.setPointSize(16)
         self.parametersLabel_2.setFont(font)
         self.parametersLabel_2.setObjectName("parametersLabel_2")
         self.parametersTextEdit_2 = QtWidgets.QTextEdit(self.parametersWidget_14)
@@ -247,7 +247,7 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(self.parametersLabel_3.sizePolicy().hasHeightForWidth())
         self.parametersLabel_3.setSizePolicy(sizePolicy)
         font = QtGui.QFont()
-        font.setPointSize(18)
+        font.setPointSize(12)
         self.parametersLabel_3.setFont(font)
         self.parametersLabel_3.setObjectName("parametersLabel_3")
         self.parametersTextEdit_3 = QtWidgets.QTextEdit(self.parametersWidget_15)
@@ -275,7 +275,7 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(self.parametersLabel_1.sizePolicy().hasHeightForWidth())
         self.parametersLabel_1.setSizePolicy(sizePolicy)
         font = QtGui.QFont()
-        font.setPointSize(18)
+        font.setPointSize(8)
         self.parametersLabel_1.setFont(font)
         self.parametersLabel_1.setObjectName("parametersLabel_1")
         self.parametersTextEdit_1 = QtWidgets.QTextEdit(self.parametersWidget_1)
@@ -303,7 +303,7 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(self.parametersLabel_31.sizePolicy().hasHeightForWidth())
         self.parametersLabel_31.setSizePolicy(sizePolicy)
         font = QtGui.QFont()
-        font.setPointSize(18)
+        font.setPointSize(12)
         self.parametersLabel_31.setFont(font)
         self.parametersLabel_31.setObjectName("parametersLabel_31")
         self.parametersTextEdit_31 = QtWidgets.QTextEdit(self.parametersWidget_4)
@@ -730,9 +730,9 @@ class Ui_MainWindow(object):
         MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindow)
-        self.detectionFrameButton.clicked.connect(self.detectionFrame.raise_) # type: ignore
-        self.parametersFrameButtuon.clicked.connect(self.parametersFrame.raise_) # type: ignore
-        self.filesFrameButtuon.clicked.connect(self.filesFrame.raise_) # type: ignore
+        self.detectionFrameButton.clicked.connect(self.detectionFrame.raise) # type: ignore
+        self.parametersFrameButtuon.clicked.connect(self.parametersFrame.raise) # type: ignore
+        self.filesFrameButtuon.clicked.connect(self.filesFrame.raise) # type: ignore
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
@@ -767,30 +767,30 @@ class Ui_MainWindow(object):
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">false</p></body></html>"))
-        self.parametersLabel_2.setText(_translate("MainWindow", "min_bound"))
+        self.parametersLabel_2.setText(_translate("MainWindow", "min_spot_area"))
         self.parametersTextEdit_2.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:\'.AppleSystemUIFont\'; font-size:13pt;\">10000</span></p></body></html>"))
-        self.parametersLabel_3.setText(_translate("MainWindow", "mid_bound"))
+        self.parametersLabel_3.setText(_translate("MainWindow", "wing_height_percent"))
         self.parametersTextEdit_3.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">90000</p></body></html>"))
-        self.parametersLabel_1.setText(_translate("MainWindow", "upper_bound"))
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">0.4</p></body></html>"))
+        self.parametersLabel_1.setText(_translate("MainWindow", "left_most_point_adjustment"))
         self.parametersTextEdit_1.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">120000</p></body></html>"))
-        self.parametersLabel_31.setText(_translate("MainWindow", "max_bound"))
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">100</p></body></html>"))
+        self.parametersLabel_31.setText(_translate("MainWindow", "centroid_adjustment"))
         self.parametersTextEdit_31.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">200000</p></body></html>"))
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">200</p></body></html>"))
         self.parametersLabel_35.setText(_translate("MainWindow", "adjust_rate"))
         self.parametersTextEdit_35.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
