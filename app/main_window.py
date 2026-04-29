@@ -730,9 +730,9 @@ class Ui_MainWindow(object):
         MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindow)
-        self.detectionFrameButton.clicked.connect(self.detectionFrame.raise) # type: ignore
-        self.parametersFrameButtuon.clicked.connect(self.parametersFrame.raise) # type: ignore
-        self.filesFrameButtuon.clicked.connect(self.filesFrame.raise) # type: ignore
+        self.detectionFrameButton.clicked.connect(self.detectionFrame.raise_) # type: ignore
+        self.parametersFrameButtuon.clicked.connect(self.parametersFrame.raise_) # type: ignore
+        self.filesFrameButtuon.clicked.connect(self.filesFrame.raise_) # type: ignore
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
