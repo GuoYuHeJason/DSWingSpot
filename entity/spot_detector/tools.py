@@ -189,11 +189,13 @@ def find_spot_contour(
     median_blur_iterations: int = 5,
     contour_area_threshold: float = 10000,
     cut_right_half: bool = False,
-    ostu_threshold: bool = True,
+    ostu_threshold: bool = False, # could start with ostu threshold, but one more iteration worth of work. more compute time.
     adjust_bin_thresh: bool = False,
-    upper_bound: int = 120000,
-    softer_upper_bound: int = 90000,
-    hard_upper_bound: int = 200000,
+    # adjust by hight, contour is expected to be above a certain height, if the contour is too low, it is likely to be veins or noise, adjust the threshold and try again.
+    # height options: 1. percentage of the wing height. 2. above y coordinate of the left most point. 3. above a certain distance from the centroid of the wing contour.
+    wing_height_percentage_threshold: float = 0,
+    left_most_point_adjustment: int = 0,
+    centroid_adjustment: int = 0,
     scale_by: float = 0.9,
     iterations: int = 0,
 ) -> np.ndarray | None:
@@ -226,7 +228,8 @@ def find_spot_contour(
     if ostu_threshold:
         # Apply Otsu's thresholding
         gray = image_preprocessing(image)
-        _, bin_thresh = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
+        otsu_retval, _ = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
+        bin_thresh = int(otsu_retval)
 
     thresh = binary_spot(image, bin_thresh)
 
@@ -315,37 +318,55 @@ def find_spot_contour(
     if not adjust_bin_thresh:
         return contour
     
-    area = cv2.contourArea(contour)
-    if area < softer_upper_bound or softer_upper_bound <= 0:
-        return contour
-    # if too long, return
-    if iterations >= 10:
-        if area < hard_upper_bound or hard_upper_bound <= 0:
-            return contour
+    # adjusting binary threshold
+    spot_lowest_point = np.max(contour[:, :, 1])
+
+    # 1. decide which height to use as the reference for adjustment
+    # 2. calculate the reference height based on the chosen method
+    if wing_height_percentage_threshold > 0:
+        wing_height = np.max(wing_contour[:, :, 1]) - np.min(wing_contour[:, :, 1])
+        reference_height = wing_height * wing_height_percentage_threshold
+        reference_height = np.min(wing_contour[:, :, 1]) + reference_height # to compare with the y coordinate of the spot lowest point
+
+    elif left_most_point_adjustment != 0:
+        wing_left_most_point_y = wing_contour.reshape(-1, 2)[np.argmin(wing_contour.reshape(-1, 2)[:, 0]), 1]
+        # moving up is negative adjustment, moving down is positive adjustment
+        reference_height = wing_left_most_point_y + left_most_point_adjustment
+    
+    elif centroid_adjustment != 0:
+        M = cv2.moments(contour)
+        if M["m00"] != 0:
+            wing_centroid_y = M["m01"] / M["m00"]
         else:
-            return None
-    if iterations >= 3:
-        if area < upper_bound or upper_bound <= 0:
-            return contour
-        
-    return find_spot_contour(image = image,
-                    wing_contour = wing_contour,
-                    bin_thresh = int(bin_thresh * scale_by),
-                    min_black_pixels = min_black_pixels,
-                    min_black_width = min_black_width,
-                    median_blur_ksize = median_blur_ksize,
-                    close_kernel_hori = close_kernel_hori,
-                    close_kernel_vert = close_kernel_vert,
-                    open_kernel_hori = open_kernel_hori,
-                    open_kernel_vert = open_kernel_vert,
-                    median_blur_iterations = median_blur_iterations,
-                    contour_area_threshold = contour_area_threshold,
-                    cut_right_half = cut_right_half,
-                    upper_bound = upper_bound,
-                    softer_upper_bound = softer_upper_bound,
-                    hard_upper_bound = hard_upper_bound,
-                    scale_by = scale_by,
-                    iterations = iterations + 1)
+            wing_centroid_y = 0  # degenerate contour
+        reference_height = wing_centroid_y + centroid_adjustment
+    
+    else: # no adjustment, return the contour directly
+        return contour
+    
+
+    # return if the spot lowest point is above the reference height, otherwise adjust the threshold and try again
+    if spot_lowest_point < reference_height:
+        return contour
+    else:
+        return find_spot_contour(image = image,
+                        wing_contour = wing_contour,
+                        bin_thresh = int(bin_thresh * scale_by),
+                        min_black_pixels = min_black_pixels,
+                        min_black_width = min_black_width,
+                        median_blur_ksize = median_blur_ksize,
+                        close_kernel_hori = close_kernel_hori,
+                        close_kernel_vert = close_kernel_vert,
+                        open_kernel_hori = open_kernel_hori,
+                        open_kernel_vert = open_kernel_vert,
+                        median_blur_iterations = median_blur_iterations,
+                        contour_area_threshold = contour_area_threshold,
+                        cut_right_half = cut_right_half,
+                        wing_height_percentage_threshold = wing_height_percentage_threshold,
+                        left_most_point_adjustment = left_most_point_adjustment,
+                        centroid_adjustment = centroid_adjustment,
+                        scale_by = scale_by,
+                        iterations = iterations + 1)
         # iterate
         # find the spot on cut thresholded image, but draw the contour on the original image
 
