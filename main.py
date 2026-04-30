@@ -15,6 +15,7 @@ import multiprocessing
 if __name__ == '__main__':
     multiprocessing.freeze_support() # for pyinstaller on Windows
     #make app
+
     # Enable High DPI scaling
     QtWidgets.QApplication.setAttribute(QtCore.Qt.AA_EnableHighDpiScaling, True)
 

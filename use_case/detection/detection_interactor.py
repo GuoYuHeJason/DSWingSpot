@@ -21,17 +21,22 @@ class DetectionInteractor(DetectionInputBoundary):
     _output_boundary: DetectionOutputBoundary
     _temp_folder_dao: TempFolderDAO
 
+    def _create_empty_data(self) -> dict[str, list[str]]:
+        return {
+            "image_id": [],
+            "wing_area": [],
+            "spot_area": [],
+            "spot_ratio": [],
+        }
+
     def __init__(self, output_boundary: DetectionOutputBoundary):
-        self._data = {"image_id" : [],
-        "wing_area": [],
-        "spot_area": [],
-        "spot_ratio": []}
+        self._data = self._create_empty_data()
         self._output_boundary = output_boundary
         self._temp_folder_dao = TempFolderDAO()
 
     # may be having it as a separate function is better for preparing data access
     def reset_data(self) -> None:
-        self._data = {}
+        self._data = self._create_empty_data()
         # clear temp folder
         self._temp_folder_dao.cleanup()
 
@@ -121,8 +126,8 @@ class DetectionInteractor(DetectionInputBoundary):
             # call output boundary to prepare success view
             self._output_boundary.prepare_success_view(DetectionOutputData(
                 # errors are image_ids in images but not in self._data["image_id"]
-                errors=[image_id for (image_path, image_id) in images if image_id not in self._data["image_id"]],
-                success=self._data["image_id"]
+                errors=[image_id for (image_path, image_id) in images if image_id not in self._data.get("image_id", [])],
+                success=self._data.get("image_id", [])
             ))
 
         except Exception as e:

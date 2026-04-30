@@ -159,7 +159,7 @@ def predictions_to_xml_with_contour(predictor_name: str, images: str, out_file: 
     with open(out_file, "w") as f:
         f.write(xmlstr)
 
-def dlib_xml_to_pandas(xml_file: str, parse=False):
+def dlib_xml_to_pandas(xml_file: str, parse=False, default_landmarks=24):
     '''
     Efficiently imports dlib xml data into a pandas dataframe.
     '''
@@ -170,7 +170,20 @@ def dlib_xml_to_pandas(xml_file: str, parse=False):
     # Flatten the XML structure using list comprehensions
     for image in root.findall("images/image"):
         image_file = image.attrib['file']
-        box = image.findall("box")[0]
+        boxes = image.findall("box")
+        if not boxes:
+            landmark_list.append({
+            'file': image_file,
+            'id': os.path.splitext(os.path.basename(image_file))[0],
+            'box_top': 0,
+            'box_left': 0,
+            'box_width': 0,
+            'box_height': 0,
+            **{f'X{i}': 0 for i in range(default_landmarks)},
+            **{f'Y{i}': 0 for i in range(default_landmarks)}
+        })
+            continue  # Skip images with no box
+        box = boxes[0]
         box_top = float(box.attrib['top'])
         box_left = float(box.attrib['left'])
         box_width = float(box.attrib['width'])
