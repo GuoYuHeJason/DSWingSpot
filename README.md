@@ -34,6 +34,7 @@
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
+    <li><a href="#testing--ci">Testing & CI</a></li>
     <li>
       <a href="#inputs">Inputs</a>
       <ul>
@@ -142,6 +143,22 @@ DSwingSpot is a desktop application that estimates the area of wings and wing sp
 3. Click the **Detect** button to start processing.
 
 4. Monitor progress in the application. Upon completion, results will be saved to the output directory.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Testing & CI
+
+Run the algorithm/mechanism test pyramid and coverage locally:
+
+```sh
+pytest --cov --cov-report=term-missing --cov-report=xml
+```
+
+The CI workflow enforces a minimum 70% coverage gate.
+
+For full GitHub Actions setup and branch protection guidance, see:
+
+- [`docs/ci_pipeline.md`](docs/ci_pipeline.md)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
