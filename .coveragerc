@@ -1,0 +1,12 @@
+[run]
+branch = True
+source =
+    entity.wing_detector
+    entity.spot_detector
+    entity.image_resizing
+    use_case.detection.tools
+    use_case.detection.temp_folder_DAO
+
+[report]
+show_missing = True
+skip_covered = False
