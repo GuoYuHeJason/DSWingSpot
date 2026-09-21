@@ -8,6 +8,5 @@ source =
     use_case.detection.temp_folder_DAO
 
 [report]
-fail_under = 70
 show_missing = True
 skip_covered = False

@@ -148,17 +148,11 @@ DSwingSpot is a desktop application that estimates the area of wings and wing sp
 
 ## Testing & CI
 
-Run the algorithm/mechanism test pyramid and coverage locally:
+Run the tests and measure coverage locally:
 
 ```sh
 pytest --cov --cov-report=term-missing --cov-report=xml
 ```
-
-The CI workflow enforces a minimum 70% coverage gate.
-
-For full GitHub Actions setup and branch protection guidance, see:
-
-- [`docs/ci_pipeline.md`](docs/ci_pipeline.md)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -311,7 +305,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Project Link: [https://github.com/GuoYuHeJason/wing_spot_detection](https://github.com/GuoYuHeJason/wing_spot_detection)
+Repository: [https://github.com/GuoYuHeJason/DSWingSpot](https://github.com/GuoYuHeJason/DSWingSpot)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
