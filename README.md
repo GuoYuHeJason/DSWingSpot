@@ -147,7 +147,7 @@ DSwingSpot is a desktop application that estimates the area of wings and wing sp
 
 ## Testing & CI
 
-![CI](https://github.com/GuoYuHeJason/DSWingSpot/actions/workflows/ci.yml/badge.svg)
+[![CI](https://github.com/GuoYuHeJason/DSWingSpot/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/GuoYuHeJason/DSWingSpot/actions/workflows/ci.yml)
 [![codecov](https://codecov.io/gh/GuoYuHeJason/DSWingSpot/branch/main/graph/badge.svg)](https://codecov.io/gh/GuoYuHeJason/DSWingSpot)
 
 ### Testing Approach
