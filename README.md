@@ -1,6 +1,4 @@
 <a id="readme-top"></a>
-![CI](https://github.com/GuoYuHeJason/DSWingSpot/actions/workflows/ci.yml/badge.svg)
-[![codecov](https://codecov.io/gh/GuoYuHeJason/DSWingSpot/branch/main/graph/badge.svg)](https://codecov.io/gh/GuoYuHeJason/DSWingSpot)
 
 <!-- PROJECT LOGO -->
 <br />
@@ -149,11 +147,34 @@ DSwingSpot is a desktop application that estimates the area of wings and wing sp
 
 ## Testing & CI
 
-Run the tests and measure coverage locally:
+![CI](https://github.com/GuoYuHeJason/DSWingSpot/actions/workflows/ci.yml/badge.svg)
+[![codecov](https://codecov.io/gh/GuoYuHeJason/DSWingSpot/branch/main/graph/badge.svg)](https://codecov.io/gh/GuoYuHeJason/DSWingSpot)
 
-```sh
+### Testing Approach
+
+This project uses [pytest](https://pytest.org/) for unit and integration testing.
+
+### Running Tests Locally
+
+```bash
+git clone https://GuoYuHeJason/DSWingSpot/your-repo.git
+pip install -r requirements.txt
+pip install -r requirements-dev.txt
 pytest --cov --cov-report=term-missing --cov-report=xml
 ```
+
+### Continuous Integration
+
+Every push and pull request triggers the CI pipeline
+([`.github/workflows/ci.yml`](.github/workflows/ci.yml)), which:
+
+- Runs the test suite across Linux, macOS, and Windows on Python 3.10–3.12.
+- Uploads coverage to Codecov.
+
+### Contributing Tests
+
+New functionality should include corresponding tests under `tests/`.
+All CI checks must pass before a PR can be merged into `main`.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
