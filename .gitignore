@@ -1,0 +1,45 @@
+# Virtual environments
+venv/
+.venv/
+env/
+ENV/
+
+# Byte-compiled / optimized
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Packaging / build artifacts
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# PyInstaller (desktop app bundling)
+*.spec
+*.manifest
+
+# Test / type-check / coverage caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Environment / secrets
+.env
+.env.local
+
+# Editors
+.idea/
+*.swp
+
+# macOS
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
