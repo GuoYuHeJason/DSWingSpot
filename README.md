@@ -149,11 +149,31 @@ DSwingSpot is a desktop application that estimates the area of wings and wing sp
 
 ## Testing & CI
 
-Run the tests and measure coverage locally:
+### Testing Approach
 
-```sh
-pytest --cov --cov-report=term-missing --cov-report=xml
+This project uses [pytest](https://pytest.org/) for unit and integration testing.
+
+### Running Tests Locally
+
+```bash
+git clone https://github.com/GuoYuHeJason/DSWingSpot.git
+pip install -r requirements.txt
+pip install -r requirements-dev.txt
+pytest --cov=your_package --cov-report=term-missing
 ```
+
+### Continuous Integration
+
+Every push and pull request triggers the CI pipeline
+([`.github/workflows/ci.yml`](.github/workflows/ci.yml)), which:
+
+- Runs the test suite across Linux, macOS, and Windows on Python 3.10–3.12.
+- Uploads coverage to Codecov.
+
+### Contributing Tests
+
+New functionality should include corresponding tests under `tests/`.
+All CI checks must pass before a PR can be merged into `main`.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
