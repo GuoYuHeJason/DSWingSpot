@@ -1,5 +1,6 @@
 <a id="readme-top"></a>
-
+![CI](https://github.com/GuoYuHeJason/DSWingSpot/actions/workflows/ci.yml/badge.svg)
+[![codecov](https://codecov.io/gh/GuoYuHeJason/DSWingSpot/branch/main/graph/badge.svg)](https://codecov.io/gh/GuoYuHeJason/DSWingSpot)
 
 <!-- PROJECT LOGO -->
 <br />
