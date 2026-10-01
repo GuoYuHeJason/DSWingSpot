@@ -28,7 +28,9 @@ class DetectionController:
         parameters: dict[str, float]
     ) -> None:
         # load image
-        scale_bar_template = PIL.Image.open(file_paths["scale_bar_template"])
+        # load fully now, PIL opens lazily and decoding the same image from several threads fails
+        with PIL.Image.open(file_paths["scale_bar_template"]) as template_file:
+            scale_bar_template = template_file.copy()
 
         input_data = DetectionInputData(
                 input_path=input_path,
@@ -44,3 +46,7 @@ class DetectionController:
                 landmark2_y=f"Y{int(parameters['landmark2'])}",
         )
         self.input_boundary.execute(input_data)
+
+    def cancel(self) -> None:
+        """Requests cancellation of the running detection."""
+        self.input_boundary.cancel()
