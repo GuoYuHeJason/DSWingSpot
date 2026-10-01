@@ -136,8 +136,6 @@ DSwingSpot is a desktop application that estimates the area of wings and wing sp
    4. **Results**: review the measurements per image and click a row to see the detected outlines (wing in blue, spot in red).
       Images that could not be measured are listed with the reason.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 ## Testing & CI
 
 [![CI](https://github.com/GuoYuHeJason/DSWingSpot/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/GuoYuHeJason/DSWingSpot/actions/workflows/ci.yml)
@@ -168,6 +166,7 @@ Every push and pull request triggers the CI pipeline
 
 New functionality should include corresponding tests under `tests/`.
 All CI checks must pass before a PR can be merged into `main`.
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
