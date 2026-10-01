@@ -89,39 +89,31 @@ def shape_predictor_helper(predictor: ShapePredictor, image_dir: str, output_xml
 
 def final_detection_helper(wing_detector: WingDetector, spot_detector: SpotDetector, wing_image_path: str, spot_image_path: str, image_id: str, landmark1: tuple[int, int], landmark2: tuple[int, int], output_dir: str, format: str = "png") -> dict[str, str]:
     """
-    Detect wing contour from a single image using the provided WingDetector.
-    Returns a dictionary with detection results and the output path.
+    Detect wing and spot contours from a single image and save an annotated image.
+    Returns a dictionary with the measured areas. Raises if the wing cannot be detected.
     """
     # read in with openCV to get np.ndarray
-    try:
-        wing_image = cv2.imread(wing_image_path)
-        spot_image = cv2.imread(spot_image_path)
-        wing_contour = wing_detector.detect(wing_image, landmark1, landmark2)
-        spot_contour = spot_detector.detect(spot_image, wing_contour)
+    # errors are raised so the interactor can report the image as failed instead of recording zero areas
+    wing_image = cv2.imread(wing_image_path)
+    spot_image = cv2.imread(spot_image_path)
+    wing_contour = wing_detector.detect(wing_image, landmark1, landmark2)
+    spot_contour = spot_detector.detect(spot_image, wing_contour)
 
-        # draw the contours on spot_image for visualization
-        output_image = spot_image.copy()
-        cv2.drawContours(output_image, [wing_contour], -1, (255, 0, 0), 2)  # draw wing contour in blue
-        if spot_contour is not None:
-            cv2.drawContours(output_image, [spot_contour], -1, (0, 0, 255), 2)  # draw spot contour in red
+    # draw the contours on spot_image for visualization
+    output_image = spot_image.copy()
+    cv2.drawContours(output_image, [wing_contour], -1, (255, 0, 0), 2)  # draw wing contour in blue
+    if spot_contour is not None:
+        cv2.drawContours(output_image, [spot_contour], -1, (0, 0, 255), 2)  # draw spot contour in red
 
-        output_path = os.path.join(output_dir, f"{image_id}.{format}")
-        cv2.imwrite(output_path, output_image)
+    output_path = os.path.join(output_dir, f"{image_id}.{format}")
+    cv2.imwrite(output_path, output_image)
 
-        # return area of wing and spot as ints along with the output path
-        wing_area = cv2.contourArea(wing_contour) if wing_contour is not None else 0
-        spot_area = cv2.contourArea(spot_contour) if spot_contour is not None else 0
-        return {
-            "image_id": image_id,
-            "wing_area": str(int(wing_area)),
-            "spot_area": str(int(spot_area)),
-            "spot_ratio": str(float(spot_area / wing_area)) if wing_area > 0 else "0.0"
-        }
-    except Exception as e:
-        print(f"Error processing image {image_id}: {e}")
-        return {
-            "image_id": image_id,
-            "wing_area": "0",
-            "spot_area": "0",
-            "spot_ratio": "0.0"
-        }
+    # return area of wing and spot as ints
+    wing_area = cv2.contourArea(wing_contour) if wing_contour is not None else 0
+    spot_area = cv2.contourArea(spot_contour) if spot_contour is not None else 0
+    return {
+        "image_id": image_id,
+        "wing_area": str(int(wing_area)),
+        "spot_area": str(int(spot_area)),
+        "spot_ratio": str(float(spot_area / wing_area)) if wing_area > 0 else "0.0"
+    }
