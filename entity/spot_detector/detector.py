@@ -41,6 +41,7 @@ class AlgSpotDetector(SpotDetector):
                                          close_kernel_vert=int(self.parameters['close_kernel_vert']), 
                                          open_kernel_hori=int(self.parameters['open_kernel_hori']), 
                                          open_kernel_vert=int(self.parameters['open_kernel_vert']),
+                                         ostu_threshold=SpotDetector._to_bool(self.parameters.get('ostu_threshold', False)),
                                          adjust_bin_thresh=SpotDetector._to_bool(self.parameters['adjust_bin_thresh']),
                                          contour_area_threshold=int(self.parameters['min_spot_area']),
                                          wing_height_percentage_threshold=float(self.parameters['wing_height_percent']),

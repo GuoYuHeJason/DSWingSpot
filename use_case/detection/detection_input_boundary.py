@@ -12,3 +12,7 @@ class DetectionInputBoundary(ABC):
     @abstractmethod
     def execute(self, input: DetectionInputData) -> None:
         """Executes the detection use case."""
+
+    @abstractmethod
+    def cancel(self) -> None:
+        """Requests cancellation of a running detection. Safe to call from any thread."""

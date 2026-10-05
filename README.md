@@ -125,25 +125,16 @@ DSwingSpot is a desktop application that estimates the area of wings and wing sp
    ```
    or run the executable DSwingSpot.exe if you downloaded a binary release.
 
-2. In the GUI, configure the following:
+2. The window guides you through four steps (listed in the sidebar):
 
-   **Paths:**
-   - **Input Path**: Directory containing your wing images (supports common formats: PNG, JPG, TIFF)
-   - **Output Path**: Directory where results will be saved
-
-   **Asset Files:**
-   - **Shape Predictor**: Path to the `.dat` model file
-   - **Background Removal Model**: Path to the `.pth` model file
-   - **Scale Bar Template**: Path to your scale bar template image
-
-   **Parameters:**
-   - Adjust parameters as needed for your specific images (see [Parameters](#parameters) section)
-
-3. Click the **Detect** button to start processing.
-
-4. Monitor progress in the application. Upon completion, results will be saved to the output directory.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+   1. **Images & models**: choose (or drag in) the folder with your wing images. The results folder defaults to `DSwingSpot_results` inside it.
+      Choose the model files individually, or click **Load from folder…** and pick the extracted `assets` folder.
+      An `assets` folder next to the application is picked up automatically, and all paths are remembered between sessions.
+   2. **Parameters**: the defaults suit typical *D. suzukii* images. Hover over any setting for an explanation (see [Parameters](#parameters)).
+      Parameters can be saved and loaded as presets, including from a previous run's `run_settings.json`.
+   3. **Run detection**: check the summary and click **Start detection**. Progress for each stage and a log are shown, and a run can be cancelled.
+   4. **Results**: review the measurements per image and click a row to see the detected outlines (wing in blue, spot in red).
+      Images that could not be measured are listed with the reason.
 
 ## Testing & CI
 
@@ -175,6 +166,7 @@ Every push and pull request triggers the CI pipeline
 
 New functionality should include corresponding tests under `tests/`.
 All CI checks must pass before a PR can be merged into `main`.
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -279,6 +271,7 @@ The application generates the following output files:
 | `wing_spot_results.csv` | Tabular results with image ID, wing area, spot area, and spot ratio |
 | `wing_spot_results.json` | Same results in JSON format |
 | `landmarks_debug.csv` | Predicted landmark coordinates for each image (useful for debugging) |
+| `run_settings.json` | Input folder, model files and parameters used for the run (can be loaded as a preset) |
 | Debug images | Annotated images showing detected contours and landmarks (in output directory) |
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
